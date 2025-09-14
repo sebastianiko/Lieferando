@@ -482,13 +482,15 @@ h3 {
     display: flex;
 }
 
-/* Footer Styles */
+/* Popup Styles */
 
 .popup-hidden {
     display: none !important;
 }
 
-#popup-overlay, #min-order-popup-overlay, #empty-basket-popup-overlay {
+#popup-overlay,
+#min-order-popup-overlay,
+#empty-basket-popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
