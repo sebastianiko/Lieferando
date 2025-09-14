@@ -208,7 +208,7 @@ function calculateSums() {
 function renderBasketContentHTML(index, amount, basketDish, price, formattedDishPrice) {
     document.getElementById("basket-content").innerHTML += /*html*/ `
     <div class="basketElements">
-        <img src="img/add.png" alt="add" class="buttonsBasket" onclick="addToBasket('${basketDish}', ${basketPrices})"/>
+        <img src="img/add.png" alt="add" class="buttonsBasket" onclick="addToBasket('${basketDish}', ${price})"/>
         <img src="img/reduce.png" alt="reduce" class="buttonsBasket" onclick="deleteFromBasket(${index}, ${amount}, '${basketDish}')"/>
         <div class="fullShoppingBasket">
         <div class="sumsSeperator"><b>${amount} x ${basketDish} ${price}€ = <div>${formattedDishPrice}€</b></div></div>
@@ -257,16 +257,16 @@ function checkBasketSum(calculateBasketSum) {
     }
 }
 
-function submitOrder() {
+function submitOrder(calculateBasketSum) {
     if (deliveryCost == 0) {
         orderForPickUp();
     } else {
-        orderDelivery();
+        orderDelivery(calculateBasketSum);
     }
 }
 
-function orderDelivery() {
-    if (totalSum < minOrderSum) {
+function orderDelivery(calculateBasketSum) {
+    if (calculateBasketSum < minOrderSum) {
         showMinOrderPopup();
     } else {
         showPopup();
