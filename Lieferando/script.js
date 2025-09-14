@@ -231,11 +231,9 @@ function renderAllSums(calculateBasketSum) {
 
 function calculateDeliveryCost(calculateBasketSum, formatteddifferenceToMinimumOrder) {
     if (deliveryCost == 0) {
-        //choosePickUpOption
         document.getElementById("minimumOrderValueContainer").classList.add("display-none");
         document.getElementById("deliveryCosts").classList.add("display-none");
     } else {
-        //choseDeliveryOption
         checkMinOrderValue(calculateBasketSum, formatteddifferenceToMinimumOrder);
     }
 }
@@ -285,11 +283,11 @@ function orderDelivery(calculateBasketSum) {
 }
 
 function showMinOrderPopup() {
-    document.getElementById('min-order-popup-overlay').classList.remove('popup-hidden');
+    document.getElementById("min-order-popup-overlay").classList.remove("popup-hidden");
 }
 
 function closeMinOrderPopup() {
-    document.getElementById('min-order-popup-overlay').classList.add('popup-hidden');
+    document.getElementById("min-order-popup-overlay").classList.add("popup-hidden");
 }
 
 function orderForPickUp() {
@@ -307,11 +305,11 @@ function orderForPickUp() {
 }
 
 function showPopup() {
-    document.getElementById('popup-overlay').classList.remove('popup-hidden');
+    document.getElementById("popup-overlay").classList.remove("popup-hidden");
 }
 
 function closePopup() {
-    document.getElementById('popup-overlay').classList.add('popup-hidden');
+    document.getElementById("popup-overlay").classList.add("popup-hidden");
 }
 
 function checkMinOrderValue(calculateBasketSum, formatteddifferenceToMinimumOrder) {
@@ -425,11 +423,11 @@ function openMobileBasket() {
 }
 
 function showEmptyBasketPopup() {
-    document.getElementById('empty-basket-popup-overlay').classList.remove('popup-hidden');
+    document.getElementById("empty-basket-popup-overlay").classList.remove("popup-hidden");
 }
 
 function closeEmptyBasketPopup() {
-    document.getElementById('empty-basket-popup-overlay').classList.add('popup-hidden');
+    document.getElementById("empty-basket-popup-overlay").classList.add("popup-hidden");
 }
 
 function deleteFromMobileBasket() {
