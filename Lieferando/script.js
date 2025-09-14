@@ -267,7 +267,7 @@ function submitOrder() {
 
 function orderDelivery() {
     if (totalSum < minOrderSum) {
-        alert("Du hast den Mindestbestellwert leider noch nicht erreicht");
+        showMinOrderPopup();
     } else {
         showPopup();
         amounts.splice(0, amounts.length);
@@ -282,6 +282,14 @@ function orderDelivery() {
             renderEmptyBasket();
         }
     }
+}
+
+function showMinOrderPopup() {
+    document.getElementById('min-order-popup-overlay').classList.remove('popup-hidden');
+}
+
+function closeMinOrderPopup() {
+    document.getElementById('min-order-popup-overlay').classList.add('popup-hidden');
 }
 
 function orderForPickUp() {
@@ -299,11 +307,11 @@ function orderForPickUp() {
 }
 
 function showPopup() {
-    document.getElementById('popup-overlay').classList.remove('d-none');
+    document.getElementById('popup-overlay').classList.remove('popup-hidden');
 }
 
 function closePopup() {
-    document.getElementById('popup-overlay').classList.add('d-none');
+    document.getElementById('popup-overlay').classList.add('popup-hidden');
 }
 
 function checkMinOrderValue(calculateBasketSum, formatteddifferenceToMinimumOrder) {
@@ -406,7 +414,7 @@ function renderBasketButton() {
 
 function openMobileBasket() {
     if (totalSum === 0 || totalSum === 2.99) {
-        alert("Bitte füge etwas in den Warenkorb hinzu!");
+        showEmptyBasketPopup();
         return;
     }
     document.getElementById("basket-container").classList.remove("d-none");
@@ -414,6 +422,14 @@ function openMobileBasket() {
     if (calculateSums()) {
         document.getElementById("basketButtonContainer").classList.add("d-none");
     }
+}
+
+function showEmptyBasketPopup() {
+    document.getElementById('empty-basket-popup-overlay').classList.remove('popup-hidden');
+}
+
+function closeEmptyBasketPopup() {
+    document.getElementById('empty-basket-popup-overlay').classList.add('popup-hidden');
 }
 
 function deleteFromMobileBasket() {

@@ -86,10 +86,22 @@
         </div>
         <div id="basketButtonContainer"></div>
         <footer></footer>
-        <div id="popup-overlay" class="d-none">
-            <div id="popup">
+        <div id="popup-overlay" class="popup-hidden">
+            <div class="popup-content">
                 <p>Vielen Dank für deine Bestellung!</p>
                 <button onclick="closePopup()">OK</button>
+            </div>
+        </div>
+        <div id="min-order-popup-overlay" class="popup-hidden">
+            <div class="popup-content">
+                <p>Du hast den Mindestbestellwert leider noch nicht erreicht.</p>
+                <button onclick="closeMinOrderPopup()">OK</button>
+            </div>
+        </div>
+        <div id="empty-basket-popup-overlay" class="popup-hidden">
+            <div class="popup-content">
+                <p>Bitte füge etwas in den Warenkorb hinzu!</p>
+                <button onclick="closeEmptyBasketPopup()">OK</button>
             </div>
         </div>
     </body>
