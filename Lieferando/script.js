@@ -269,7 +269,7 @@ function orderDelivery() {
     if (totalSum < minOrderSum) {
         alert("Du hast den Mindestbestellwert leider noch nicht erreicht");
     } else {
-        alert("Vielen Dank für deine Bestellung!");
+        showPopup();
         amounts.splice(0, amounts.length);
         basketDishes.splice(0, basketDishes.length);
         basketPrices.splice(0, basketPrices.length);
@@ -285,7 +285,7 @@ function orderDelivery() {
 }
 
 function orderForPickUp() {
-    alert("Vielen Dank für deine Bestellung!");
+    showPopup();
     amounts.splice(0, amounts.length);
     basketDishes.splice(0, basketDishes.length);
     basketPrices.splice(0, basketPrices.length);
@@ -296,6 +296,14 @@ function orderForPickUp() {
     } else {
         renderEmptyBasket();
     }
+}
+
+function showPopup() {
+    document.getElementById('popup-overlay').classList.remove('d-none');
+}
+
+function closePopup() {
+    document.getElementById('popup-overlay').classList.add('d-none');
 }
 
 function checkMinOrderValue(calculateBasketSum, formatteddifferenceToMinimumOrder) {
